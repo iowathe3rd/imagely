@@ -1,5 +1,5 @@
 const CreditsPage = () => {
-  return <></>;
+  return <>Credits</>;
 };
 
 export default CreditsPage;

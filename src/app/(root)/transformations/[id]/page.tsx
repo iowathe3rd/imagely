@@ -1,5 +1,5 @@
 const TransformationsDetailsPage = () => {
-  return <></>;
+  return <>Transformations details page</>;
 };
 
 export default TransformationsDetailsPage;

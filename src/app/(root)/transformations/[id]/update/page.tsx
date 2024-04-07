@@ -1,5 +1,5 @@
 const UpdateTransformationPage = () => {
-  return <></>;
+  return <>Update transformation page</>;
 };
 
 export default UpdateTransformationPage;

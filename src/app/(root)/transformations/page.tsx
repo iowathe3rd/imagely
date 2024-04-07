@@ -1,1 +1,5 @@
-const TransformationsPage = () => {};
+const TransformationsPage = () => {
+  return <>Transformations</>;
+};
+
+export default TransformationsPage;

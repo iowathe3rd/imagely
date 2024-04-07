@@ -1,5 +1,5 @@
 const AddTransformationTypePage = () => {
-  return <></>;
+  return <>Add tranformations page</>;
 };
 
 export default AddTransformationTypePage;
