@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/shared/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
@@ -25,14 +26,20 @@ export default function RootLayout({
         variables: { colorPrimary: "#000000" },
       }}
     >
-      <html lang="en" data-theme="dark">
+      <html lang="en">
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen font-sans antialiased bg-background",
             fontSans.variable,
           )}
         >
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

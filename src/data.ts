@@ -1,5 +1,15 @@
 import {
-    AdjustmentsHorizontal, ArrowDownOnSquareStackIcon, ArrowUpTray, BackSpace, Bars3Icon, Camera, Home, Photo, ShoppingBag, Sparkles, UserCircle,
+  AdjustmentsHorizontal,
+  ArrowDownOnSquareStackIcon,
+  ArrowUpTray,
+  BackSpace,
+  Bars3Icon,
+  Camera,
+  Home,
+  Photo,
+  ShoppingBag,
+  Sparkles,
+  UserCircle,
 } from "@/assets/icons";
 
 type navLinks = Array<{
