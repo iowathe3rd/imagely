@@ -16,7 +16,10 @@ import {
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { addImage, updateImage } from "@/lib/actions/image.actions";
 import { updateCredits } from "@/lib/actions/user.actions";
+import { getCldImageUrl } from "next-cloudinary";
+import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -57,6 +60,8 @@ const TransformationForm = ({
 
   const [isPending, startTransition] = useTransition();
 
+  const router = useRouter();
+
   const initialFormValues =
     data && action === "Update"
       ? {
@@ -73,8 +78,69 @@ const TransformationForm = ({
     defaultValues: initialFormValues,
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    setIsSubmittingState(true);
+    if (data || imageState) {
+      const transformationUrl = getCldImageUrl({
+        width: imageState?.width,
+        height: imageState?.height,
+        src: imageState?.publicId,
+        ...transformationConfigState,
+      });
+
+      const imageData = {
+        title: values.title,
+        publicId: imageState?.publicId,
+        transformationType: type,
+        width: imageState?.width,
+        height: imageState?.height,
+        config: transformationConfigState,
+        secureURL: imageState?.secureURL,
+        transformationURL: transformationUrl,
+        aspectRatio: values.aspectRatio,
+        prompt: values.prompt,
+        color: values.color,
+      };
+
+      if (action === "Add") {
+        try {
+          const newImage = await addImage({
+            image: imageData,
+            userId,
+            path: "/",
+          });
+
+          if (newImage) {
+            form.reset();
+            setImageState(data);
+            router.push(`/transformations/${newImage._id}`);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      if (action === "Update") {
+        try {
+          const updatedImage = await updateImage({
+            image: {
+              ...imageData,
+              _id: data._id,
+            },
+            userId,
+            path: `/transformations/${data._id}`,
+          });
+
+          if (updatedImage) {
+            router.push(`/transformations/${updatedImage._id}`);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      setIsSubmittingState(false);
+    }
   }
 
   const onInputChangeHandler = (
