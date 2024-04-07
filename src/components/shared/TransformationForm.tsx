@@ -282,7 +282,7 @@ const TransformationForm = ({
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid h-fit min-h-[200px] grid-cols-1 gap-5 py-4 md:grid-cols-2">
           <Field
             control={form.control}
             name={"publicId"}
@@ -313,11 +313,11 @@ const TransformationForm = ({
             onClick={onTransformHandler}
             size={"lg"}
           >
-            {isTransformingState ? "Transforming..." : "Apply"}
+            {isTransformingState ? "Transforming..." : "Apply Transformation"}
           </Button>
 
-          <Button type="button" disabled={isSubmittingState} size={"lg"}>
-            {isSubmittingState ? "Submitting..." : "Submit"}
+          <Button disabled={isSubmittingState} size={"lg"} type="submit">
+            {isSubmittingState ? "Submitting..." : "Save Image"}
           </Button>
         </div>
       </form>
