@@ -7,6 +7,7 @@ import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
+import { Skeleton } from "../ui/skeleton";
 
 const TransformedImage = ({
   image,
@@ -70,19 +71,13 @@ const TransformedImage = ({
 
           {isTransforming && (
             <div className="flex-center absolute left-[50%] top-[50%] size-full -translate-x-1/2 -translate-y-1/2 flex-col gap-2 rounded-[10px] border bg-dark-700/90">
-              <Image
-                src="/assets/icons/spinner.svg"
-                width={50}
-                height={50}
-                alt="spinner"
-              />
-              <p className="text-white/80">Please wait...</p>
+              <Skeleton className="w-full h-full" />
             </div>
           )}
         </div>
       ) : (
         <div className="flex items-center justify-center font-medium text-[14px] leading-[120%] h-full min-h-72 flex-col gap-5 rounded-[16px] border border-dashed bg-base-100/20 shadow-inner">
-          Transformed Image
+          Transform image to see a magic!!!
         </div>
       )}
     </div>

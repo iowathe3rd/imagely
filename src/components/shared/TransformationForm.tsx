@@ -282,11 +282,11 @@ const TransformationForm = ({
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-h-[60vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <Field
             control={form.control}
             name={"publicId"}
-            className="flex size-full flex-col"
+            className="flex size-full flex-col "
             render={({ field }) => (
               <MediaUploader
                 onValueChange={field.onChange}

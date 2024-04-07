@@ -80,7 +80,7 @@ const MediaUploader = ({
             </>
           ) : (
             <div
-              className="justify-center items-center flex h-72 cursor-pointer flex-col gap-5 rounded-[16px] border border-dashed bg-base-100/20 shadow-inner"
+              className="justify-center coursor-pointer items-center flex h-72 cursor-pointer flex-col gap-5 rounded-[16px] border border-dashed bg-base-100/20 shadow-inner"
               onClick={() => open()}
             >
               <div className="rounded-[16px] bg-base p-5 shadow-sm shadow-base-200/50">
