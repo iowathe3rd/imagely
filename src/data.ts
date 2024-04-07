@@ -15,7 +15,7 @@ import {
 type navLinks = Array<{
   label: string;
   route: string;
-  icon: React.ReactSVG;
+  icon: (props?: any) => JSX.Element;
 }>;
 
 export const navLinks: navLinks = [
