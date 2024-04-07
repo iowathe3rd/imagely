@@ -17,7 +17,6 @@ import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { updateCredits } from "@/lib/actions/user.actions";
-import { Alexandria } from "next/font/google";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -25,6 +24,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Field } from "./Field";
 import MediaUploader from "./MediaUploader";
+import TransformedImage from "./TransformedImage";
 
 export const formSchema = z.object({
   title: z.string(),
@@ -216,7 +216,7 @@ const TransformationForm = ({
           </div>
         )}
 
-        <div className="">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-h-[60vh]">
           <Field
             control={form.control}
             name={"publicId"}
@@ -230,6 +230,14 @@ const TransformationForm = ({
                 type={type}
               />
             )}
+          />
+          <TransformedImage
+            image={imageState}
+            type={type}
+            title={form.getValues("title")}
+            isTransforming={isTransformingState}
+            setIsTransforming={setIsTransformingState}
+            transformationConfig={transformationConfigState}
           />
         </div>
         <div className="flex flex-col lg:flex-row gap-4">
