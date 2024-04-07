@@ -13,12 +13,10 @@ import {
   defaultValues,
   transformationTypes,
 } from "@/data";
-import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-import InsufficientCreditsModal from "@/components/shared/InsufficientCreditsModal";
 import { addImage, updateImage } from "@/lib/actions/image.actions";
 import { updateCredits } from "@/lib/actions/user.actions";
+import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { getCldImageUrl } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
@@ -29,6 +27,8 @@ import { Input } from "../ui/input";
 import { Field } from "./Field";
 import MediaUploader from "./MediaUploader";
 import TransformedImage from "./TransformedImage";
+
+import { InsufficientCreditsModal } from "@/components/shared/InsufficientCreditsModal";
 
 export const formSchema = z.object({
   title: z.string(),

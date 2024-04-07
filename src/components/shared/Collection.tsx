@@ -117,7 +117,7 @@ const Card = ({ image }: { image: IImage }) => {
           </p>
           {transformationTypes[
             image.transformationType as TransformationTypeKey
-          ].icon("")}
+          ].icon()}
         </div>
       </Link>
     </li>
