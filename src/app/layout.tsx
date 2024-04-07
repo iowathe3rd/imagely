@@ -25,7 +25,7 @@ export default function RootLayout({
         variables: { colorPrimary: "#000000" },
       }}
     >
-      <html lang="en">
+      <html lang="en" data-theme="dark">
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
