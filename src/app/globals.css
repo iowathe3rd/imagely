@@ -74,3 +74,9 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer utilities {
+    .header {
+        @apply flex justify-between items-center fixed h-20 w-full lg:hidden;
+    }
+}

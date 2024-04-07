@@ -10,9 +10,11 @@ import { Button } from "../ui/button";
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="hidden h-screen flex-col justify-between w-72 p-5 lg:flex">
+    <aside className="hidden h-screen flex-col justify-between w-72 p-5 lg:flex shadow-md">
       <div className="flex size-full flex-col gap-4">
-        <Link href="/" className="sidebar-logo"></Link>
+        <Link href="/" className="sidebar-logo">
+          <Image src={"/logo-text.png"} alt="logo" width={400} height={200} />
+        </Link>
 
         <nav className="h-full flex-col justify-between md:flex md:gap-4">
           <SignedIn>
@@ -25,19 +27,13 @@ const Sidebar = () => {
                     <Button
                       asChild
                       variant={isActive ? "default" : "secondary"}
-                      className="w-full"
+                      className="w-full flex justify-start"
                     >
                       <Link
                         className="p-16-semibold flex size-full gap-4 p-4"
                         href={link.route}
                       >
-                        <Image
-                          src={link.icon}
-                          alt="logo"
-                          width={24}
-                          height={24}
-                          className={`${isActive && "brightness-200"}`}
-                        />
+                        <link.icon height={"25px"} />
                         {link.label}
                       </Link>
                     </Button>
@@ -55,19 +51,13 @@ const Sidebar = () => {
                     <Button
                       asChild
                       variant={isActive ? "default" : "secondary"}
-                      className="w-full"
+                      className="w-full flex justify-start"
                     >
                       <Link
                         className="p-16-semibold flex size-full gap-4 p-4"
                         href={link.route}
                       >
-                        <Image
-                          src={link.icon}
-                          alt="logo"
-                          width={24}
-                          height={24}
-                          className={`${isActive && "brightness-200"}`}
-                        />
+                        {<link.icon height={"25px"} />}
                         {link.label}
                       </Link>
                     </Button>
@@ -75,14 +65,14 @@ const Sidebar = () => {
                 );
               })}
 
-              <li className="flex-center cursor-pointer gap-2 p-4">
+              <li className="flex items-center flex-row-reverse justify-center cursor-pointer gap-2 p-4">
                 <UserButton afterSignOutUrl="/" showName />
               </li>
             </ul>
           </SignedIn>
 
           <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button asChild>
               <Link href="/sign-in">Login</Link>
             </Button>
           </SignedOut>

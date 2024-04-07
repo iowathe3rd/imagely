@@ -1,49 +1,60 @@
+import {
+  AdjustmentsHorizontalIcon,
+  BackspaceIcon,
+  CameraIcon,
+  HomeIcon,
+  PhotoIcon,
+  ShoppingBagIcon,
+  SparklesIcon,
+  UserCircleIcon,
+} from "@heroicons/react/16/solid";
+
 type navLinks = Array<{
   label: string;
   route: string;
-  icon: string;
+  icon: typeof HomeIcon;
 }>;
 
 export const navLinks: navLinks = [
   {
     label: "Home",
     route: "/",
-    icon: "/assets/icons/home.svg",
+    icon: HomeIcon,
   },
   {
     label: "Image Restore",
     route: "/transformations/add/restore",
-    icon: "/assets/icons/image.svg",
+    icon: PhotoIcon,
   },
   {
     label: "Generative Fill",
     route: "/transformations/add/fill",
-    icon: "/assets/icons/stars.svg",
+    icon: SparklesIcon,
   },
   {
     label: "Object Remove",
     route: "/transformations/add/remove",
-    icon: "/assets/icons/scan.svg",
+    icon: BackspaceIcon,
   },
   {
     label: "Object Recolor",
     route: "/transformations/add/recolor",
-    icon: "/assets/icons/filter.svg",
+    icon: AdjustmentsHorizontalIcon,
   },
   {
     label: "Background Remove",
     route: "/transformations/add/removeBackground",
-    icon: "/assets/icons/camera.svg",
+    icon: CameraIcon,
   },
   {
     label: "Profile",
     route: "/profile",
-    icon: "/assets/icons/profile.svg",
+    icon: UserCircleIcon,
   },
   {
     label: "Buy Credits",
     route: "/credits",
-    icon: "/assets/icons/bag.svg",
+    icon: ShoppingBagIcon,
   },
 ];
 
