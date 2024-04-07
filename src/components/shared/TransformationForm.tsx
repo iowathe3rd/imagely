@@ -16,11 +16,12 @@ import {
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import InsufficientCreditsModal from "@/components/shared/InsufficientCreditsModal";
 import { addImage, updateImage } from "@/lib/actions/image.actions";
 import { updateCredits } from "@/lib/actions/user.actions";
 import { getCldImageUrl } from "next-cloudinary";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "../ui/button";
@@ -194,9 +195,16 @@ const TransformationForm = ({
     return onChangeField(value);
   };
 
+  useEffect(() => {
+    if (imageState && (type === "restore" || type === "removeBackground")) {
+      setNewTransform(transType.config);
+    }
+  }, [imageState, transType.config, type]);
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        {creditBalance < Math.abs(creditFee) && <InsufficientCreditsModal />}
         <Field
           control={form.control}
           name="title"
