@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="hidden h-screen flex-col justify-between w-72 p-5 lg:flex shadow-md">
+    <aside className="hidden h-screen flex-col bg-background-300 justify-between w-72 p-5 lg:flex shadow-md">
       <div className="flex size-full flex-col gap-4">
         <Link href="/" className="sidebar-logo">
           <Image src={"/logo-text.png"} alt="logo" width={400} height={200} />
@@ -26,7 +26,7 @@ const Sidebar = () => {
                   <li key={link.route} className="w-full">
                     <Button
                       asChild
-                      variant={isActive ? "default" : "secondary"}
+                      variant={isActive ? "default" : "ghost"}
                       className="w-full flex justify-start"
                     >
                       <Link
@@ -50,7 +50,7 @@ const Sidebar = () => {
                   <li key={link.route} className="w-full">
                     <Button
                       asChild
-                      variant={isActive ? "default" : "secondary"}
+                      variant={isActive ? "default" : "ghost"}
                       className="w-full flex justify-start"
                     >
                       <Link
@@ -66,7 +66,7 @@ const Sidebar = () => {
               })}
 
               <li className="flex items-center flex-row-reverse justify-center cursor-pointer gap-2 p-4">
-                <UserButton afterSignOutUrl="/" showName />
+                <UserButton afterSignOutUrl="/" />
               </li>
             </ul>
           </SignedIn>

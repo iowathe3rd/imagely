@@ -1,15 +1,15 @@
 import {
-  AdjustmentsHorizontal,
-  ArrowDownOnSquareStackIcon,
-  ArrowUpTray,
-  BackSpace,
-  Bars3Icon,
-  Camera,
-  Home,
-  Photo,
-  ShoppingBag,
-  Sparkles,
-  UserCircle,
+    AdjustmentsHorizontal,
+    ArrowDownOnSquareStackIcon,
+    ArrowUpTray,
+    BackSpace,
+    Bars3Icon,
+    Camera,
+    Home,
+    Photo,
+    ShoppingBag,
+    Sparkles,
+    UserCircle,
 } from "@/assets/icons";
 
 type navLinks = Array<{
@@ -26,37 +26,37 @@ export const navLinks: navLinks = [
   },
   {
     label: "Image Restore",
-    route: "/transformations/add/restore",
+    route: "/dashboard/transformations/add/restore",
     icon: Photo,
   },
   {
     label: "Generative Fill",
-    route: "/transformations/add/fill",
+    route: "/dashboard/transformations/add/fill",
     icon: Sparkles,
   },
   {
     label: "Object Remove",
-    route: "/transformations/add/remove",
+    route: "/dashboard/transformations/add/remove",
     icon: BackSpace,
   },
   {
     label: "Object Recolor",
-    route: "/transformations/add/recolor",
+    route: "/dashboard/transformations/add/recolor",
     icon: AdjustmentsHorizontal,
   },
   {
     label: "Background Remove",
-    route: "/transformations/add/removeBackground",
+    route: "/dashboard/transformations/add/removeBackground",
     icon: Camera,
   },
   {
     label: "Profile",
-    route: "/profile",
+    route: "/dashboard/profile",
     icon: UserCircle,
   },
   {
     label: "Buy Credits",
-    route: "/credits",
+    route: "/dashboard/credits",
     icon: ShoppingBag,
   },
 ];
