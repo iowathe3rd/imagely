@@ -7,17 +7,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { aspectRatioOptions, defaultValues, transformationTypes } from "@/data";
-import { AspectRatioKey, debounce } from "@/lib/utils";
+import {
+  aspectRatioOptions,
+  creditFee,
+  defaultValues,
+  transformationTypes,
+} from "@/data";
+import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { updateCredits } from "@/lib/actions/user.actions";
 import { Alexandria } from "next/font/google";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Field } from "./Field";
+import MediaUploader from "./MediaUploader";
 
 export const formSchema = z.object({
   title: z.string(),
@@ -47,6 +54,8 @@ const TransformationForm = ({
   const [newTransform, setNewTransform] = useState<Transformations | null>(
     null,
   );
+
+  const [isPending, startTransition] = useTransition();
 
   const initialFormValues =
     data && action === "Update"
@@ -87,7 +96,19 @@ const TransformationForm = ({
     return onChangeField(value);
   };
 
-  const onTransformHandler = () => {};
+  const onTransformHandler = async () => {
+    setIsTransformingState(true);
+
+    setTranformationConfigState(
+      deepMergeObjects(newTransform, transformationConfigState),
+    );
+
+    setNewTransform(null);
+
+    startTransition(async () => {
+      await updateCredits(userId, creditFee);
+    });
+  };
 
   const onSelectFieldHandler = (
     value: string,
@@ -195,32 +216,23 @@ const TransformationForm = ({
           </div>
         )}
 
-        <div className="media-uploader-field">
-          {/* <CustomField
+        <div className="">
+          <Field
             control={form.control}
-            name="publicId"
+            name={"publicId"}
             className="flex size-full flex-col"
             render={({ field }) => (
               <MediaUploader
                 onValueChange={field.onChange}
-                setImage={setImage}
+                setImage={setImageState}
                 publicId={field.value}
-                image={image}
+                image={imageState}
                 type={type}
               />
             )}
-          /> */}
-
-          {/* <TransformedImage
-            image={image}
-            type={type}
-            title={form.getValues().title}
-            isTransforming={isTransforming}
-            setIsTransforming={setIsTransforming}
-            transformationConfig={transformationConfig}
-          /> */}
+          />
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col lg:flex-row gap-4">
           <Button
             type="button"
             disabled={isTransformingState || newTransform === null}
