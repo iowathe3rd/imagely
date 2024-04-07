@@ -1,13 +1,13 @@
 "use client";
 
+import { Bars3Icon } from "@/assets/icons";
+import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/data";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { Bars3Icon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "../ui/button";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -50,8 +50,7 @@ const MobileNav = () => {
                             className="p-16-semibold flex size-full gap-4 p-4"
                             href={link.route}
                           >
-                            <link.icon height={"25px"} />
-                            {link.label}
+                            {<link.icon />} {link.label}
                           </Link>
                         </Button>
                       </li>

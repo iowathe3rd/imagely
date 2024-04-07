@@ -1,6 +1,6 @@
+import { ArrowUpTray } from "@/assets/icons";
 import { useToast } from "@/components/ui/use-toast";
 import { dataUrl, getImageSize } from "@/lib/utils";
-import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 import { CldImage, CldUploadWidget } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
@@ -84,7 +84,7 @@ const MediaUploader = ({
               onClick={() => open()}
             >
               <div className="rounded-[16px] bg-base p-5 shadow-sm shadow-base-200/50">
-                <ArrowUpTrayIcon height={"50px"} />
+                <ArrowUpTray height={"50px"} />
               </div>
               <p className="p-14-medium">Click here to upload image</p>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
+import { ArrowDownOnSquareStackIcon } from "@/assets/icons";
 import { dataUrl, debounce, download, getImageSize } from "@/lib/utils";
-import { ArrowDownOnSquareStackIcon } from "@heroicons/react/24/outline";
 import { CldImage, getCldImageUrl } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
