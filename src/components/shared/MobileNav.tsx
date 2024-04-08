@@ -1,6 +1,6 @@
 "use client";
 
-import { Bars3Icon } from "@/assets/icons";
+import { Bars3Icon } from "@/assets/icons/Bars3Icon";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/data";
