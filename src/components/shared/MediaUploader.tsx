@@ -1,4 +1,4 @@
-import { ArrowUpTray } from "@/assets/icons/ArrowUpTray";
+import { ArrowUpTray } from "@/components/assets/icons/ArrowUpTray";
 import { useToast } from "@/components/ui/use-toast";
 import { dataUrl, getImageSize } from "@/lib/utils";
 import { CldImage, CldUploadWidget } from "next-cloudinary";

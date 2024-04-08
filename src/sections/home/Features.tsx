@@ -1,11 +1,11 @@
-import { AdjustmentsHorizontal } from "@/assets/icons/AdjustmentsHorizonal";
-import { BackSpace } from "@/assets/icons/BackSpace";
-import { Camera } from "@/assets/icons/Camera";
-import { Home } from "@/assets/icons/Home";
-import { Photo } from "@/assets/icons/Photo";
-import { ShoppingBag } from "@/assets/icons/ShoppingBag";
-import { Sparkles } from "@/assets/icons/Sparkles";
-import { UserCircle } from "@/assets/icons/UserCircle";
+import { AdjustmentsHorizontal } from "@/components/assets/icons/AdjustmentsHorizonal";
+import { BackSpace } from "@/components/assets/icons/BackSpace";
+import { Camera } from "@/components/assets/icons/Camera";
+import { Home } from "@/components/assets/icons/Home";
+import { Photo } from "@/components/assets/icons/Photo";
+import { ShoppingBag } from "@/components/assets/icons/ShoppingBag";
+import { Sparkles } from "@/components/assets/icons/Sparkles";
+import { UserCircle } from "@/components/assets/icons/UserCircle";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
