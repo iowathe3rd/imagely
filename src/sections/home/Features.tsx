@@ -8,41 +8,44 @@ import {
   Sparkles,
   UserCircle,
 } from "@/assets/icons";
+import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
 
 export const features = [
   {
     title: "Image Restore",
     description:
       "Restore old or damaged images with our advanced image restoration feature.",
-    route: "/transformations/add/restore",
+    route: "/dashboard/transformations/add/restore",
     icon: Photo,
   },
   {
     title: "Generative Fill",
     description:
       "Automatically fill in missing parts of images using generative algorithms.",
-    route: "/transformations/add/fill",
+    route: "/dashboard/transformations/add/fill",
     icon: Sparkles,
   },
   {
     title: "Object Remove",
     description:
       "Effortlessly remove unwanted objects from your images with our object removal tool.",
-    route: "/transformations/add/remove",
+    route: "/dashboard/transformations/add/remove",
     icon: BackSpace,
   },
   {
     title: "Object Recolor",
     description:
       "Change the color of objects in your images with our easy-to-use recoloring feature.",
-    route: "/transformations/add/recolor",
+    route: "/dashboard/transformations/add/recolor",
     icon: AdjustmentsHorizontal,
   },
   {
     title: "Background Remove",
     description:
       "Quickly remove backgrounds from images to isolate objects or people.",
-    route: "/transformations/add/removeBackground",
+    route: "/dashboard/transformations/add/removeBackground",
     icon: Camera,
   },
   {
@@ -56,19 +59,23 @@ function FeatureBlock({
   title,
   description,
   icon,
+  href,
 }: {
   title: string;
   description: string;
   icon: (props?: any) => JSX.Element;
+  href: string;
 }) {
   return (
-    <div>
-      <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-        {icon()}
+    <Link href={href}>
+      <div className="h-48 p-4 rounded-xl border-2 border-border shadow-xl hover:shadow-2xl transition-all">
+        <div className="flex justify-center items-center w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900s">
+          <Button variant={"ghost"}>{icon()}</Button>
+        </div>
+        <h3 className="mb-2 text-xl font-bold">{title}</h3>
+        <p className="text-gray-500 dark:text-gray-400">{description}</p>
       </div>
-      <h3 className="mb-2 text-xl font-bold dark:text-white">{title}</h3>
-      <p className="text-gray-500 dark:text-gray-400">{description}</p>
-    </div>
+    </Link>
   );
 }
 
@@ -85,13 +92,14 @@ const Features = () => {
             and capital can unlock long-term value and drive economic growth.
           </p>
         </div>
-        <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((feature, index) => (
             <FeatureBlock
               key={index}
               title={feature.title}
               description={feature.description}
               icon={feature.icon}
+              href={feature.route}
             />
           ))}
         </div>

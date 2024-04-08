@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { SearchLoop } from "@/assets/icons";
 import { Input } from "@/components/ui/input";
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
-import { Save } from "lucide-react";
 export const Search = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
