@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { SearchLoop } from "@/components/assets/icons/SearchLoop";
+import SearchLoop from "@/components/assets/icons/SearchLoop";
 import { Input } from "@/components/ui/input";
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 export const Search = () => {

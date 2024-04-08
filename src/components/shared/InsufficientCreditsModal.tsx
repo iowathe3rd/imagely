@@ -14,7 +14,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 
-import { XMark } from "@/components/assets/icons/Xmark";
+import XMark from "@/components/assets/icons/Xmark";
 export const InsufficientCreditsModal = () => {
   const router = useRouter();
 
