@@ -115,7 +115,7 @@ const TransformationForm = ({
           if (newImage) {
             form.reset();
             setImageState(data);
-            router.push(`/transformations/${newImage._id}`);
+            router.push(`/dashboard/transformations/${newImage._id}`);
           }
         } catch (error) {
           console.log(error);
