@@ -16,7 +16,7 @@ type navLinks = Array<{
 export const navLinks: navLinks = [
   {
     label: "Home",
-    route: "/",
+    route: "/dashboard/",
     icon: Home,
   },
   {
