@@ -73,6 +73,9 @@
     body {
         @apply bg-background text-foreground;
     }
+    img path {
+        fill: var(--foreground);
+    }
 }
 
 @layer utilities {

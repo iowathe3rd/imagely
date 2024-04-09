@@ -2,6 +2,7 @@
 
 import { navLinks } from "@/data";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,6 +10,7 @@ import { Button } from "../ui/button";
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const { theme } = useTheme();
   return (
     <aside className="hidden h-screen flex-col bg-background-300 justify-between w-72 p-5 lg:flex shadow-md">
       <div className="flex size-full flex-col gap-4">
@@ -65,9 +67,9 @@ const Sidebar = () => {
                       >
                         <Image
                           src={link.icon}
-                          width={40}
+                          width={25}
                           alt={link.route}
-                          height={40}
+                          height={25}
                         />
                         {link.label}
                       </Link>
@@ -77,7 +79,15 @@ const Sidebar = () => {
               })}
 
               <li className="flex items-center flex-row-reverse justify-center cursor-pointer gap-2 p-4">
-                <UserButton afterSignOutUrl="/" />
+                <UserButton
+                  afterSignOutUrl="/"
+                  showName
+                  appearance={{
+                    variables: {
+                      colorText: theme === "dark" ? "white" : "black",
+                    },
+                  }}
+                />
               </li>
             </ul>
           </SignedIn>
