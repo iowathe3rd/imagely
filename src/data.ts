@@ -62,7 +62,7 @@ export const plans: plans = [
   {
     _id: 1,
     name: "Free",
-    icon: "/assets/icons/free-plan.svg",
+    icon: "/icons/free-plan.svg",
     price: 0,
     credits: 20,
     inclusions: [
@@ -87,8 +87,8 @@ export const plans: plans = [
   {
     _id: 2,
     name: "Pro Package",
-    icon: "/assets/icons/free-plan.svg",
-    price: 40,
+    icon: "/icons/free-plan.svg",
+    price: 20,
     credits: 120,
     inclusions: [
       {
@@ -107,13 +107,17 @@ export const plans: plans = [
         label: "Priority Updates",
         isIncluded: false,
       },
+      {
+        label: "You are a great human <3",
+        isIncluded: true,
+      },
     ],
   },
   {
     _id: 3,
     name: "Premium Package",
-    icon: "/assets/icons/free-plan.svg",
-    price: 199,
+    icon: "/icons/free-plan.svg",
+    price: 100,
     credits: 2000,
     inclusions: [
       {
@@ -130,6 +134,10 @@ export const plans: plans = [
       },
       {
         label: "Priority Updates",
+        isIncluded: true,
+      },
+      {
+        label: "You are a great human <3",
         isIncluded: true,
       },
     ],
