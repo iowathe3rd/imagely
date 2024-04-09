@@ -1,14 +1,6 @@
-import AdjustmentsHorizontal from "@/components/assets/icons/AdjustmentsHorizonal";
-import BackSpace from "@/components/assets/icons/BackSpace";
-import Camera from "@/components/assets/icons/Camera";
-import Home from "@/components/assets/icons/Home";
-import Photo from "@/components/assets/icons/Photo";
-import ShoppingBag from "@/components/assets/icons/ShoppingBag";
-import Sparkles from "@/components/assets/icons/Sparkles";
-import UserCircle from "@/components/assets/icons/UserCircle";
-import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 export const features = [
   {
@@ -16,41 +8,41 @@ export const features = [
     description:
       "Restore old or damaged images with our advanced image restoration feature.",
     route: "/dashboard/transformations/add/restore",
-    icon: Photo,
+    icon: "/icons/sparkles.svg",
   },
   {
     title: "Generative Fill",
     description:
       "Automatically fill in missing parts of images using generative algorithms.",
     route: "/dashboard/transformations/add/fill",
-    icon: Sparkles,
+    icon: "/icons/sparkles.svg",
   },
   {
     title: "Object Remove",
     description:
       "Effortlessly remove unwanted objects from your images with our object removal tool.",
     route: "/dashboard/transformations/add/remove",
-    icon: BackSpace,
+    icon: "/icons/sparkles.svg",
   },
   {
     title: "Object Recolor",
     description:
       "Change the color of objects in your images with our easy-to-use recoloring feature.",
     route: "/dashboard/transformations/add/recolor",
-    icon: AdjustmentsHorizontal,
+    icon: "/icons/sparkles.svg",
   },
   {
     title: "Background Remove",
     description:
       "Quickly remove backgrounds from images to isolate objects or people.",
     route: "/dashboard/transformations/add/removeBackground",
-    icon: Camera,
+    icon: "/icons/sparkles.svg",
   },
   {
     title: "Buy Credits",
     description: "Purchase credits to access premium features and services.",
     route: "/credits",
-    icon: ShoppingBag,
+    icon: "/icons/sparkles.svg",
   },
 ];
 function FeatureBlock({
@@ -61,14 +53,16 @@ function FeatureBlock({
 }: {
   title: string;
   description: string;
-  icon: (props?: any) => JSX.Element;
+  icon: string;
   href: string;
 }) {
   return (
     <Link href={href}>
       <div className="h-48 p-4 rounded-xl border-2 border-border shadow-xl hover:shadow-2xl transition-all">
         <div className="flex justify-center items-center w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900s">
-          <Button variant={"ghost"}>{icon()}</Button>
+          <Button variant={"ghost"}>
+            <Image src={icon} width={40} height={40} alt={title} />
+          </Button>
         </div>
         <h3 className="mb-2 text-xl font-bold">{title}</h3>
         <p className="text-gray-500 dark:text-gray-400">{description}</p>

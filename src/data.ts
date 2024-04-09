@@ -1,58 +1,49 @@
-import AdjustmentsHorizontal from "@/components/assets/icons/AdjustmentsHorizonal";
-import BackSpace from "@/components/assets/icons/BackSpace";
-import Camera from "@/components/assets/icons/Camera";
-import Home from "@/components/assets/icons/Home";
-import Photo from "@/components/assets/icons/Photo";
-import ShoppingBag from "@/components/assets/icons/ShoppingBag";
-import Sparkles from "@/components/assets/icons/Sparkles";
-import UserCircle from "@/components/assets/icons/UserCircle";
-
 type navLinks = Array<{
   label: string;
   route: string;
-  icon: (props?: any) => JSX.Element;
+  icon: string;
 }>;
 
 export const navLinks: navLinks = [
   {
     label: "Home",
     route: "/dashboard/",
-    icon: Home,
+    icon: "/icons/home.svg",
   },
   {
     label: "Image Restore",
     route: "/dashboard/transformations/add/restore",
-    icon: Photo,
+    icon: "/icons/adjustments-horizonal.svg",
   },
   {
     label: "Generative Fill",
     route: "/dashboard/transformations/add/fill",
-    icon: Sparkles,
+    icon: "/icons/sparkles.svg",
   },
   {
     label: "Object Remove",
     route: "/dashboard/transformations/add/remove",
-    icon: BackSpace,
+    icon: "/icons/backspace.svg",
   },
   {
     label: "Object Recolor",
     route: "/dashboard/transformations/add/recolor",
-    icon: AdjustmentsHorizontal,
+    icon: "/icons/photo.svg",
   },
   {
     label: "Background Remove",
     route: "/dashboard/transformations/add/removeBackground",
-    icon: Camera,
+    icon: "/icons/backspace.svg",
   },
   {
     label: "Profile",
     route: "/dashboard/profile",
-    icon: UserCircle,
+    icon: "/icons/user-circle.svg",
   },
   {
     label: "Buy Credits",
     route: "/dashboard/credits",
-    icon: ShoppingBag,
+    icon: "/icons/shopping-bag.svg",
   },
 ];
 
@@ -151,21 +142,21 @@ export const transformationTypes = {
     title: "Restore Image",
     subTitle: "Refine images by removing noise and imperfections",
     config: { restore: true },
-    icon: Photo,
+    icon: "/icons/photo.svg",
   },
   removeBackground: {
     type: "removeBackground",
     title: "Background Remove",
     subTitle: "Removes the background of the image using AI",
     config: { removeBackground: true },
-    icon: Camera,
+    icon: "/icons/camera.svg",
   },
   fill: {
     type: "fill",
     title: "Generative Fill",
     subTitle: "Enhance an image's dimensions using AI outpainting",
     config: { fillBackground: true },
-    icon: Sparkles,
+    icon: "/icons/sparkles.svg",
   },
   remove: {
     type: "remove",
@@ -174,7 +165,7 @@ export const transformationTypes = {
     config: {
       remove: { prompt: "", removeShadow: true, multiple: true },
     },
-    icon: BackSpace,
+    icon: "/icons/backspace.svg",
   },
   recolor: {
     type: "recolor",
@@ -183,7 +174,7 @@ export const transformationTypes = {
     config: {
       recolor: { prompt: "", to: "", multiple: true },
     },
-    icon: AdjustmentsHorizontal,
+    icon: "/icons/adjustments-horizontal.svg",
   },
 };
 

@@ -13,6 +13,7 @@ import {
 import { transformationTypes } from "@/data";
 import { IImage } from "@/lib/database/models/image.model";
 import { formUrlQuery } from "@/lib/utils";
+import Image from "next/image";
 
 import { Button } from "../ui/button";
 
@@ -114,9 +115,18 @@ const Card = ({ image }: { image: IImage }) => {
           <p className="font-semibold text-[20px] leading-[140%] mr-3 line-clamp-1 text-dark-600">
             {image.title}
           </p>
-          {transformationTypes[
-            image.transformationType as TransformationTypeKey
-          ].icon()}
+          {
+            <Image
+              src={
+                transformationTypes[
+                  image.transformationType as TransformationTypeKey
+                ].icon
+              }
+              alt={""}
+              width={30}
+              height={30}
+            />
+          }
         </div>
       </Link>
     </li>

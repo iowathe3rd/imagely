@@ -1,23 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 
-import XMark from "@/components/assets/icons/Xmark";
 export const InsufficientCreditsModal = () => {
-  const router = useRouter();
-
   return (
     <AlertDialog defaultOpen>
       <AlertDialogContent>

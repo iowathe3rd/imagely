@@ -33,7 +33,13 @@ const Sidebar = () => {
                         className="p-16-semibold flex size-full gap-4 p-4"
                         href={link.route}
                       >
-                        {<link.icon />}
+                        <Image
+                          src={link.icon}
+                          width={25}
+                          alt={link.route}
+                          height={25}
+                          color={isActive ? "white" : undefined}
+                        />
                         {link.label}
                       </Link>
                     </Button>
@@ -57,7 +63,12 @@ const Sidebar = () => {
                         className="p-16-semibold flex size-full gap-4 p-4"
                         href={link.route}
                       >
-                        {<link.icon />}
+                        <Image
+                          src={link.icon}
+                          width={40}
+                          alt={link.route}
+                          height={40}
+                        />
                         {link.label}
                       </Link>
                     </Button>

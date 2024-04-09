@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import SearchLoop from "@/components/assets/icons/SearchLoop";
 import { Input } from "@/components/ui/input";
 import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 export const Search = () => {
@@ -37,7 +36,12 @@ export const Search = () => {
 
   return (
     <div className="flex items-center w-full rounded-xl border-2 border-border bg-background px-4 shadowm-md md:max-w-96">
-      <SearchLoop />
+      <Image
+        src={"/icons/search-loop.svg"}
+        width={25}
+        alt={"search"}
+        height={25}
+      />
 
       <Input
         className="border-0 bg-transparent text-dark-600 w-full placeholder:text-dark-400 h-[50px] font-medium text-[16px] leading-[140%] focus-visible:ring-offset-0 p-3 focus-visible:ring-transparent"

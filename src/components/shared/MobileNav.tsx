@@ -1,6 +1,5 @@
 "use client";
 
-import Bars3Icon from "@/components/assets/icons/Bars3Icon";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/data";
@@ -24,7 +23,12 @@ const MobileNav = () => {
 
           <Sheet>
             <SheetTrigger>
-              <Bars3Icon height={"40px"} />
+              <Image
+                src={"/icons/bars-3-icon.svg"}
+                alt={"menu"}
+                width={40}
+                height={40}
+              />
             </SheetTrigger>
             <SheetContent className="sm:w-64">
               <>
@@ -50,7 +54,13 @@ const MobileNav = () => {
                             className="p-16-semibold flex size-full gap-4 p-4"
                             href={link.route}
                           >
-                            {<link.icon />} {link.label}
+                            <Image
+                              src={link.icon}
+                              alt={link.label}
+                              width={40}
+                              height={40}
+                            />
+                            {link.label}
                           </Link>
                         </Button>
                       </li>

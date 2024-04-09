@@ -1,8 +1,8 @@
-import ArrowUpTray from "@/components/assets/icons/ArrowUpTray";
 import { useToast } from "@/components/ui/use-toast";
 import { dataUrl, getImageSize } from "@/lib/utils";
 import { CldImage, CldUploadWidget } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 
 type MediaUploaderProps = {
   onValueChange: (value: string) => void;
@@ -83,7 +83,12 @@ const MediaUploader = ({
               onClick={() => open()}
             >
               <div className="rounded-[16px] bg-base p-5 shadow-sm shadow-base-200/50">
-                <ArrowUpTray height={"50px"} />
+                <Image
+                  src="/icons/sparkles.svg"
+                  width={40}
+                  height={40}
+                  alt={""}
+                />
               </div>
               <p className="p-14-medium">Click here to upload image</p>
             </div>

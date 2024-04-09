@@ -1,6 +1,7 @@
 import { Collection } from "@/components/shared/Collection";
 import { navLinks } from "@/data";
 import { getAllImages } from "@/lib/actions/image.actions";
+import Image from "next/image";
 import Link from "next/link";
 
 const Home = async ({ searchParams }: SearchParamProps) => {
@@ -23,7 +24,12 @@ const Home = async ({ searchParams }: SearchParamProps) => {
               className="flex items-center justify-center flex-col gap-2"
             >
               <li className="flex items-center justify-center w-fit rounded-full bg-background p-4">
-                {link.icon()}
+                <Image
+                  src={link.icon}
+                  width={25}
+                  alt={link.route}
+                  height={25}
+                />
               </li>
               <p className="font-medium text-[14px] leading-[120%] text-center">
                 {link.label}

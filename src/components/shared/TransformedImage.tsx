@@ -1,6 +1,5 @@
 "use client";
 
-import ArrowDownOnSquareStackIcon from "@/components/assets/icons/ArrowDownOnSquareStackIcon";
 import { dataUrl, debounce, download, getImageSize } from "@/lib/utils";
 import { CldImage, getCldImageUrl } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
@@ -42,7 +41,7 @@ const TransformedImage = ({
 
         {hasDownload && (
           <Button variant={"default"} onClick={downloadHandler}>
-            <ArrowDownOnSquareStackIcon height={"50px"} />
+            <Image src="/icons/sparkles.svg" width={40} height={40} alt={""} />{" "}
           </Button>
         )}
       </div>
