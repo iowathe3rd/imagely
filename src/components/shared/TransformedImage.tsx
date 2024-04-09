@@ -34,14 +34,14 @@ const TransformedImage = ({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex-between">
+      <div className="flex justify-between items-center">
         <h3 className="font-bold text-[30px] leading-[140%]; text-dark-600">
           Transformed
         </h3>
 
         {hasDownload && (
           <Button variant={"default"} onClick={downloadHandler}>
-            <Image src="/icons/sparkles.svg" width={40} height={40} alt={""} />{" "}
+            Download
           </Button>
         )}
       </div>
@@ -55,7 +55,7 @@ const TransformedImage = ({
             alt={image.title}
             sizes={"(max-width: 767px) 100vw, 50vw"}
             placeholder={dataUrl as PlaceholderValue}
-            className="h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-base-100/20 object-cover p-2;"
+            className="h-fit min-h-72 w-full rounded-xl border border-border object-contain p-2"
             onLoad={() => {
               setIsTransforming && setIsTransforming(false);
             }}
