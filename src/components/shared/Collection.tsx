@@ -48,8 +48,8 @@ export const Collection = ({
 
   return (
     <>
-      <div className="md:justify-between flex mb-6 flex-col gap-5 md:flex-row">
-        <h2 className="h2-bold">Recent Edits</h2>
+      <div className="md:justify-between lg:items-center flex my-6 flex-col gap-6 md:flex-row">
+        <h2 className="h-1 text-[25px] leading-4">Recent Edits</h2>
         {hasSearch && <Search />}
       </div>
 
@@ -70,18 +70,18 @@ export const Collection = ({
           <PaginationContent className="flex w-full">
             <Button
               disabled={Number(page) <= 1}
-              className="collection-btn"
+              variant={"default"}
               onClick={() => onPageChange("prev")}
             >
               <PaginationPrevious className="hover:bg-transparent hover:text-white" />
             </Button>
 
-            <p className="flex-center p-16-medium w-fit flex-1">
+            <p className="flex items-center justify-center p-16-medium w-fit flex-1">
               {page} / {totalPages}
             </p>
 
             <Button
-              className="button w-32 bg-purple-gradient bg-cover text-white"
+              variant={"default"}
               onClick={() => onPageChange("next")}
               disabled={Number(page) >= totalPages}
             >
