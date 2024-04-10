@@ -26,7 +26,7 @@ export default function RootLayout({
         variables: { colorPrimary: "#000000" },
       }}
     >
-      <html lang="en">
+      <html lang="en" className="scroll-smooth focus:scroll-auto">
         <body
           className={cn(
             "min-h-screen font-sans antialiased bg-background",

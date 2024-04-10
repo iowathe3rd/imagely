@@ -80,6 +80,9 @@
 
 @layer utilities {
     .header {
+        @apply bg-background flex justify-between items-center h-20 w-full lg:max-w-[80%] mx-auto;
+    }
+    .mobile-nav {
         @apply flex justify-between items-center fixed h-20 w-full lg:hidden;
     }
     /* ===== TYPOGRAPHY */
