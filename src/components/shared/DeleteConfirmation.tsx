@@ -1,17 +1,18 @@
 'use client';
 
 import { deleteImage } from '@/lib/actions/image.actions';
+import { useTransition } from 'react';
 import {
 	AlertDialog,
 	AlertDialogAction,
 	AlertDialogCancel,
 	AlertDialogContent,
 	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
-} from '@radix-ui/react-alert-dialog';
-import { useTransition } from 'react';
-import { AlertDialogFooter, AlertDialogHeader } from '../ui/alert-dialog';
+} from '../ui/alert-dialog';
 import { Button } from '../ui/button';
 
 export const DeleteConfirmation = ({ imageId }: { imageId: string }) => {
@@ -37,16 +38,17 @@ export const DeleteConfirmation = ({ imageId }: { imageId: string }) => {
 
 				<AlertDialogFooter>
 					<AlertDialogCancel>Cancel</AlertDialogCancel>
-					<AlertDialogAction
-						className='border bg-red-500 text-white hover:bg-red-600'
-						onClick={() =>
-							startTransition(async () => {
-								await deleteImage(imageId);
-							})
-						}
-					>
-						{isPending ? 'Deleting...' : 'Delete'}
-					</AlertDialogAction>
+					<Button asChild variant={'destructive'}>
+						<AlertDialogAction
+							onClick={() =>
+								startTransition(async () => {
+									await deleteImage(imageId);
+								})
+							}
+						>
+							{isPending ? 'Deleting...' : 'Delete'}
+						</AlertDialogAction>
+					</Button>
 				</AlertDialogFooter>
 			</AlertDialogContent>
 		</AlertDialog>
