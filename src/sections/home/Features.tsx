@@ -58,13 +58,13 @@ function FeatureBlock({
 }) {
   return (
     <Link href={href}>
-      <div className="h-48 p-4 rounded-xl border-2 border-border shadow-xl hover:shadow-2xl transition-all">
-        <div className="flex justify-center items-center w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900s">
+      <div className="h-48 p-4 rounded-lg border-2 border-border shadow-lg hover:shadow-2xl transition-all">
+        <div className="flex items-center w-full dark:bg-primary-900s">
+          <h3 className="text-xl font-bold">{title}</h3>
           <Button variant={"ghost"}>
-            <Image src={icon} width={40} height={40} alt={title} />
+            <Image src={icon} width={25} height={25} alt={title} />
           </Button>
         </div>
-        <h3 className="mb-2 text-xl font-bold">{title}</h3>
         <p className="text-gray-500 dark:text-gray-400">{description}</p>
       </div>
     </Link>
@@ -84,7 +84,7 @@ const Features = () => {
             and capital can unlock long-term value and drive economic growth.
           </p>
         </div>
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((feature, index) => (
             <FeatureBlock
               key={index}
