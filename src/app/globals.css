@@ -83,7 +83,7 @@
 		@apply mx-auto flex h-20 w-full items-center justify-between bg-background lg:max-w-[80%];
 	}
 	.mobile-nav {
-		@apply fixed flex h-20 w-full items-center justify-between lg:hidden;
+		@apply fixed flex w-full items-center justify-between border-2 border-border bg-background lg:hidden;
 	}
 	/* ===== TYPOGRAPHY */
 	/* 44 */

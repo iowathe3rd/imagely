@@ -30,17 +30,11 @@ const MobileNav = () => {
 								height={40}
 							/>
 						</SheetTrigger>
-						<SheetContent className='sm:w-64'>
-							<>
-								<Image
-									src='/logo-text.png'
-									alt='logo'
-									width={152}
-									height={23}
-								/>
-
-								<ul className='mt-8 flex w-full flex-col items-start gap-5'>
-									{navLinks.map((link) => {
+						<SheetContent className='flex flex-col sm:w-64'>
+							<Image src='/logo-text.png' alt='logo' width={152} height={23} />
+							<div className='mt-8'>
+								<ul className='flex flex-col gap-5'>
+									{navLinks.slice(0, 6).map((link) => {
 										const isActive = link.route === pathname;
 
 										return (
@@ -67,7 +61,36 @@ const MobileNav = () => {
 										);
 									})}
 								</ul>
-							</>
+							</div>
+
+							<ul className='flex w-full grow flex-col justify-end gap-5'>
+								{navLinks.slice(6, undefined).map((link) => {
+									const isActive = link.route === pathname;
+
+									return (
+										<li key={link.route} className='w-full'>
+											<Button
+												asChild
+												variant={isActive ? 'default' : 'secondary'}
+												className='flex w-full justify-start'
+											>
+												<Link
+													className='p-16-semibold flex size-full gap-4 p-4'
+													href={link.route}
+												>
+													<Image
+														src={link.icon}
+														alt={link.label}
+														width={20}
+														height={20}
+													/>
+													{link.label}
+												</Link>
+											</Button>
+										</li>
+									);
+								})}
+							</ul>
 						</SheetContent>
 					</Sheet>
 				</SignedIn>
