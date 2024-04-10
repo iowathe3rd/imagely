@@ -8,7 +8,7 @@ export const features = [
     description:
       "Restore old or damaged images with our advanced image restoration feature.",
     route: "/dashboard/transformations/add/restore",
-    icon: "/icons/sparkles.svg",
+    icon: "/icons/adjustments-horizonal.svg",
   },
   {
     title: "Generative Fill",
@@ -22,26 +22,26 @@ export const features = [
     description:
       "Effortlessly remove unwanted objects from your images with our object removal tool.",
     route: "/dashboard/transformations/add/remove",
-    icon: "/icons/sparkles.svg",
+    icon: "/icons/backspace.svg",
   },
   {
     title: "Object Recolor",
     description:
       "Change the color of objects in your images with our easy-to-use recoloring feature.",
     route: "/dashboard/transformations/add/recolor",
-    icon: "/icons/sparkles.svg",
+    icon: "/icons/photo.svg",
   },
   {
     title: "Background Remove",
     description:
       "Quickly remove backgrounds from images to isolate objects or people.",
     route: "/dashboard/transformations/add/removeBackground",
-    icon: "/icons/sparkles.svg",
+    icon: "/icons/cross.svg",
   },
   {
     title: "Buy Credits",
     description: "Purchase credits to access premium features and services.",
-    route: "/credits",
+    route: "/dashboard/credits",
     icon: "/icons/sparkles.svg",
   },
 ];

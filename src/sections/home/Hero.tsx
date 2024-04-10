@@ -6,38 +6,43 @@ const Hero = () => {
   return (
     <section className="h-[70vh] bg-background flex items-center">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <Badge
-          variant={"outline"}
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          <Badge variant="outline">New</Badge>
-          <span className="text-sm font-medium">
-            Check out Generative fill feature!
-          </span>
-          <svg
-            className="ml-2 w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+        <Link href={"/dashboard/transformations/add/fill"}>
+          <Badge
+            variant={"outline"}
+            style={{
+              marginBottom: "40px",
+              padding: "unset",
+            }}
           >
-            <path
-              fillRule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </Badge>
+            <Badge variant="outline" className="mr-2">
+              New
+            </Badge>
+            <span className="text-sm font-medium">
+              Check out Generative fill feature!
+            </span>
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </Badge>
+        </Link>
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl">
           Imagely is easiest creation tooling
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          Here at Imagely you can remove annoying background, fill/restore image
+          and more!
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-          <Link href={"/dashboard/transformations/add/restore"}>
+          <Link href={"/dashboard"}>
             <Button variant="ghost" size={"lg"}>
               Get started
               <svg
