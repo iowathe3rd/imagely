@@ -6,6 +6,11 @@ import { auth } from "@clerk/nextjs";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Profile",
+};
+
 const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const { userId } = auth();

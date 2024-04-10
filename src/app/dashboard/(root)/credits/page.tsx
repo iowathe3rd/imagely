@@ -8,6 +8,11 @@ import { Button } from "@/components/ui/button";
 import { plans } from "@/data";
 import { getUserById } from "@/lib/actions/user.actions";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Credits",
+};
+
 const Credits = async () => {
   const { userId } = auth();
 
