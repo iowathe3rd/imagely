@@ -130,11 +130,11 @@ const TransformationForm = ({
 							_id: data._id,
 						},
 						userId,
-						path: `/transformations/${data._id}`,
+						path: `/dashboard/transformations/${data._id}`,
 					});
 
 					if (updatedImage) {
-						router.push(`/transformations/${updatedImage._id}`);
+						router.push(`/dashboard/transformations/${updatedImage._id}`);
 					}
 				} catch (error) {
 					console.log(error);

@@ -98,7 +98,7 @@ const Card = ({ image }: { image: IImage }) => {
 	return (
 		<li>
 			<Link
-				href={`/transformations/${image._id}`}
+				href={`/dashboard/transformations/${image._id}`}
 				className='flex flex-1 cursor-pointer flex-col gap-5 rounded-xl border-2 border-border bg-background p-4 shadow-xl transition-all '
 			>
 				<CldImage
