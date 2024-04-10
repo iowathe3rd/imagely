@@ -1,11 +1,11 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <main className="w-full min-h-screen flex items-center justify-center">
-      {children}
-    </main>
-  );
+	return (
+		<main className='flex min-h-screen w-full items-center justify-center'>
+			{children}
+		</main>
+	);
 };
 
 export default Layout;

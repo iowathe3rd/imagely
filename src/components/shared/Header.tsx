@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 const Header = ({ title, subtitle }: { title: string; subtitle?: string }) => {
-  return (
-    <>
-      <h2 className="text-[30px] font-bold md:text-[36px] leading-[110%] text-dark-600">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="font-normal text-[16px] leading-[140%] mt-4">
-          {subtitle}
-        </p>
-      )}
-    </>
-  );
+	return (
+		<>
+			<h2 className='text-dark-600 text-[30px] font-bold leading-[110%] md:text-[36px]'>
+				{title}
+			</h2>
+			{subtitle && (
+				<p className='mt-4 text-[16px] font-normal leading-[140%]'>
+					{subtitle}
+				</p>
+			)}
+		</>
+	);
 };
 
 export default Header;

@@ -6,11 +6,12 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "npx oxlint"
+    "lint": "npx oxlint",
+    "format": "prettier --check --ignore-path .gitignore ./src",
+    "format:fix": "prettier --write --ignore-path .gitignore ./src"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.12",
-    "@gsap/react": "^2.1.0",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -46,8 +47,11 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
+    "eslint-config-prettier": "^9.1.0",
     "oxlint": "^0.2.16",
     "postcss": "^8",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.13",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
